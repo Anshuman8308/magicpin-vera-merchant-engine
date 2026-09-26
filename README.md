@@ -1,8 +1,7 @@
 # Vera Merchant Engine — magicpin AI Challenge
 
 **Developer:** Anshuman Singh  
-**College:** Jaypee Institute of Information Technology (JIIT), Noida  
-**Contact:** anshuman83080@gmail.com  
+ 
 **Team:** Anshuman Singh Vera Merchant Engine
 
 ---
