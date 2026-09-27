@@ -8,8 +8,12 @@ from typing import Any, Dict, Optional
 from state import Store
 
 AUTO_PATTERNS = re.compile(
-    r"thank you for contacting|our team will respond|automated assistant|"
-    r"we will get back|जानकारी के लिए|धन्यवाद",
+    r"thank(?:s| you) for contacting|"
+    r"our team will respond|"
+    r"automated assistant|"
+    r"currently unavailable|"
+    r"get back to you shortly|"
+    r"जानकारी के लिए|धन्यवाद",
     re.I,
 )
 COMMIT_PATTERNS = re.compile(
