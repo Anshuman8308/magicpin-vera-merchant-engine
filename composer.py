@@ -193,6 +193,8 @@ def compose_message(
         return result
 
     out["body"] = scrub_merchant_body((out.get("body") or "").strip())
+    if not out.get("suppression_key"):
+        out["suppression_key"] = tw.get("suppression_key") or f"generic:{tw.get('id', '')}"
 
     v = _validate(out, expected_send, taboos)
     if v:
@@ -204,6 +206,8 @@ def compose_message(
                 "JSON only.",
                 user,
             )
+            if not out2.get("suppression_key"):
+                out2["suppression_key"] = tw.get("suppression_key") or f"generic:{tw.get('id', '')}"
             v2 = _validate(out2, expected_send, taboos)
             if not v2:
                 out2["body"] = scrub_merchant_body((out2.get("body") or "").strip())
